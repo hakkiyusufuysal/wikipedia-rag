@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "rag",
+      "runtimeExecutable": "/Users/hakkiyusufuysal/wikipedia-rag/venv/bin/python",
+      "runtimeArgs": ["app.py"],
+      "port": 8091,
+      "cwd": "/Users/hakkiyusufuysal/wikipedia-rag"
+    }
+  ]
+}
