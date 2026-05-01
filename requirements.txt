@@ -1,0 +1,6 @@
+flask>=3.0
+# sentence-transformers 5.x has a NameError with transformers 4.50+ on Python 3.12.
+# Pin to a known-working pair.
+sentence-transformers==3.3.1
+transformers<4.50
+chromadb>=1.0

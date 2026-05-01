@@ -1,0 +1,9 @@
+# Production Recommendations
+
+This system is built for a single-machine educational demo. To deploy it as a real service, two layers need rethinking: **the retrieval layer** (must scale beyond 40 entities and handle dynamic data) and **the serving layer** (must handle concurrent users and observability).
+
+## Retrieval layer
+Replace the local Chroma persistent client with a managed vector store that supports horizontal sharding and live updates — Pinecone, Weaviate, or Qdrant Cloud. Move embeddings off the request path: build them in a batch ingestion pipeline (e.g., daily Airflow DAG) and stream new Wikipedia revisions via the MediaWiki RecentChanges feed. Replace the rule-based query classifier with a fine-tuned BERT-base intent classifier (or zero-shot via the LLM itself) so unseen entities still route correctly. For ranking quality, add a re-ranker step after vector search — a cross-encoder like `ms-marco-MiniLM-L-12-v2` reorders the top-20 candidates before they reach the prompt, materially reducing hallucination.
+
+## Serving layer
+The Flask threaded server should be replaced with a production WSGI stack — Gunicorn behind a reverse proxy (Nginx or Caddy) — and Ollama swapped for a hosted inference service (vLLM on a GPU, or a serverless model endpoint) that handles batching and request queueing. Add Prometheus metrics for the four critical numbers (retrieval latency, generation latency, "I don't know" rate, and per-route p99) plus structured JSON logs going to a log aggregator. Cache responses in Redis with the (query_text, top_k_chunk_ids) tuple as the key — RAG queries are very cacheable because the retrieval set is deterministic. Finally, gate every model output through a faithfulness check (LLM-as-judge or NLI model) and fall back to "I don't know" when the answer can't be supported by the cited chunks; this is the single most important safeguard against hallucination in production.
