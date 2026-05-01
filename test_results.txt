@@ -1,0 +1,128 @@
+Vector store: 3837 chunks (2301 person + 1536 place)
+
+Running 16 questions...
+
+================================================================================
+
+[1/16] [PEOPLE] Who was Albert Einstein and what is he known for
+  Classification: person (matched person name(s): ['albert', 'albert einstein', 'einstein'])
+  Top sources: ['Albert Einstein', 'Albert Einstein', 'Albert Einstein']
+  Latency: total 56.2s (retrieve 10713ms, generate 45450ms)
+  Answer: Albert Einstein was a German-born theoretical physicist who developed the theory of relativity, making significant contributions to quantum theory, and received the Nobel Prize in Physics in 1921 for his services to theoretical physics. He is also famous for his work on special relativity, mass-energy equivalence formula E = mc2, and unified field theory attempts.
+
+[2/16] [PEOPLE] What did Marie Curie discover
+  Classification: person (matched person name(s): ['curie', 'marie', 'marie curie'])
+  Top sources: ['Marie Curie', 'Marie Curie', 'Marie Curie']
+  Latency: total 132.7s (retrieve 155ms, generate 132576ms)
+  Answer: Marie Curie discovered radioactivity, which is the ability of certain elements to emit rays or radiation. She and her husband Pierre Curie discovered this phenomenon together, and their work led to significant advancements in physics and chemistry.
+
+She also discovered two new elements, polonium (named after her homeland Poland) and radium, by using radioactive isotopes. Her research on radioactivity helped overturn established ideas in physics and chemistry, paving the way for major breakthroughs in fields such as medicine and energy production.
+
+In addition to her scientific contributions, Marie Curie was a trailblazer for women in science, overcoming barriers to education and career advancement throughout her life.
+
+[3/16] [PEOPLE] Why is Nikola Tesla famous
+  Classification: person (matched person name(s): ['nikola', 'nikola tesla', 'tesla'])
+  Top sources: ['Nikola Tesla', 'Nikola Tesla', 'Nikola Tesla']
+  Latency: total 67.7s (retrieve 135ms, generate 67545ms)
+  Answer: Based on the context, Nikola Tesla is famous for his contributions to the design of the modern alternating current (AC) electricity supply system. He is known for his innovative ideas and experiments with electrical discharge tubes, X-ray imaging, and other inventions that paved the way for the development of AC power systems.
+
+[4/16] [PEOPLE] Compare Lionel Messi and Cristiano Ronaldo
+  Classification: person (matched person name(s): ['cristiano', 'cristiano ronaldo', 'lionel', 'lionel messi', 'messi', 'ronaldo'])
+  Top sources: ['Lionel Messi', 'Lionel Messi', 'Lionel Messi']
+  Latency: total 163.9s (retrieve 116ms, generate 163799ms)
+  Answer: Lionel Messi is widely regarded as one of the greatest footballers of all time due to his numerous individual accolades, including eight Ballons d'Or. In contrast, Cristiano Ronaldo has achieved similar success, winning five FIFA World's Best Player awards and six European Golden Shoes. However, their contrasting public personalities have led some to speculate about a perceived rivalry between them.
+
+While both players are known for their exceptional skills on the pitch, Messi is often praised for his combination of dribbling, playmaking, passing, and goalscoring abilities, whereas Ronaldo has received praise for his speed, athleticism, and performance under pressure. Their differing styles have led to comparisons with other great footballers like Muhammad Ali and Joe Frazier in boxing.
+
+Despite their individual successes, it appears that Messi and Ronaldo do not get on well personally outside of the world of football. They have both denied any rivalry or tension between them, with Ronaldo stating that they don't have a relationship beyond their shared passion for football.
+
+[5/16] [PEOPLE] What is Frida Kahlo known for
+  Classification: person (matched person name(s): ['frida', 'frida kahlo', 'kahlo'])
+  Top sources: ['Frida Kahlo', 'Frida Kahlo', 'Frida Kahlo']
+  Latency: total 74.6s (retrieve 126ms, generate 74469ms)
+  Answer: Frida Kahlo is known for her life and art, particularly her self-portraits that depict her physical and emotional suffering. She is also famous for raising interest in her life and art among the general public outside Mexico through various tributes and exhibitions.
+
+[6/16] [PLACES] Where is the Eiffel Tower located
+  Classification: place (matched place name(s): ['eiffel tower'])
+  Top sources: ['Eiffel Tower', 'Eiffel Tower', 'Eiffel Tower']
+  Latency: total 72.2s (retrieve 93ms, generate 72105ms)
+  Answer: The Eiffel Tower is located on Champ de Mars in Paris, France.
+
+[7/16] [PLACES] Why is the Great Wall of China important
+  Classification: place (matched place name(s): ['great wall of china'])
+  Top sources: ['Great Wall of China', 'Great Wall of China', 'Great Wall of China']
+  Latency: total 69.8s (retrieve 91ms, generate 69666ms)
+  Answer: The Great Wall of China is considered one of the most impressive architectural feats in history due to its extensive length, which spans over 13,170 miles across northern borders and historical northern borders of ancient Chinese states. It was built as a series of fortifications to protect against nomadic groups from the Eurasian Steppe, with successive dynasties expanding and improving it over time. Its significance extends beyond its defensive purposes, as it has become a UNESCO World Heritage Site and one of the New 7 Wonders of the World, attracting tourists and historians alike for centuries.
+
+[8/16] [PLACES] What is Machu Picchu
+  Classification: place (matched place name(s): ['machu picchu'])
+  Top sources: ['Machu Picchu', 'Machu Picchu', 'Machu Picchu']
+  Latency: total 55.9s (retrieve 82ms, generate 55851ms)
+  Answer: Machu Picchu is a 15th-century Inca citadel located in the Eastern Cordillera of southern Peru on a mountain ridge at 2,430 meters (7,970 ft). It is situated in the Machupicchu District of Urubamba Province about 80 kilometers (50 miles) northwest of Cusco.
+
+[9/16] [PLACES] What was the Colosseum used for
+  Classification: place (matched place name(s): ['colosseum'])
+  Top sources: ['Colosseum', 'Colosseum', 'Colosseum']
+  Latency: total 50.4s (retrieve 37ms, generate 50367ms)
+  Answer: The Colosseum was primarily used for naval battles and gladiatorial contests, as well as public executions and hunts, with some events also being used for dramatic performances or reenactments.
+
+[10/16] [PLACES] Where is Mount Everest
+  Classification: place (matched place name(s): ['mount everest'])
+  Top sources: ['Mount Everest', 'Mount Everest', 'Mount Everest']
+  Latency: total 56.6s (retrieve 35ms, generate 56603ms)
+  Answer: Based on the context, Mount Everest is located in Tibet, specifically at its summit where it marks part of the China–Nepal border.
+
+[11/16] [MIXED] Which famous place is located in Turkey
+  Classification: place (keyword score: place=2 > person=0)
+  Top sources: ['Hagia Sophia', 'Hagia Sophia', 'Hagia Sophia']
+  Latency: total 46.5s (retrieve 37ms, generate 46427ms)
+  Answer: Hagia Sophia (place)
+
+[12/16] [MIXED] Which person is associated with electricity
+  Classification: both (no clear signal (person=1, place=1); searching all)
+  Top sources: ['Isaac Newton', 'Nikola Tesla', 'Nikola Tesla']
+  Latency: total 47.8s (retrieve 22ms, generate 47797ms)
+  Answer: Nikola Tesla is the person most closely associated with electricity in this context. He made significant contributions to the understanding and application of electricity, including the development of the alternating current (AC) system and his work on electromagnetic fields.
+
+[13/16] [MIXED] Compare Albert Einstein and Nikola Tesla
+  Classification: person (matched person name(s): ['albert', 'albert einstein', 'einstein', 'nikola', 'nikola tesla', 'tesla'])
+  Top sources: ['Nikola Tesla', 'Nikola Tesla', 'Nikola Tesla']
+  Latency: total 70.5s (retrieve 41ms, generate 70504ms)
+  Answer: Albert Einstein is often considered the epitome of theoretical physics, while Nikola Tesla's work laid the groundwork for many modern technologies. Both men were pioneers in their respective fields, but their approaches differed significantly.
+
+Einstein's theory of relativity revolutionized our understanding of space and time, while Tesla's contributions to electrical engineering and alternating current (AC) systems paved the way for widespread use of electricity in industry and homes. Einstein's work also led to a deeper understanding of the universe, including black holes and cosmology.
+
+In contrast, Tesla's focus on direct current (DC) systems and his experiments with high-voltage electricity led to the development of the first hydroelectric power plant at Wardenclyffe, New York. His work on the "war of the currents" between AC and DC systems helped shape the modern electrical grid.
+
+While Einstein is widely regarded as a genius for his groundbreaking contributions to physics, Tesla's innovative spirit and practical applications of his ideas have made him an iconic figure in the history
+
+[14/16] [MIXED] Compare the Eiffel Tower and the Statue of Liberty
+  Classification: place (matched place name(s): ['eiffel tower', 'statue of liberty'])
+  Top sources: ['Eiffel Tower', 'Eiffel Tower', 'Eiffel Tower']
+  Latency: total 88.9s (retrieve 37ms, generate 88881ms)
+  Answer: The Eiffel Tower and the Statue of Liberty are both iconic structures, but they have different purposes and histories.
+
+The Eiffel Tower is a global cultural icon of France, designed for the 1889 World's Fair in Paris. It was built by Gustave Eiffel and his company from 1887 to 1889, and it stands as a symbol of French engineering and innovation. The tower has since become a popular tourist destination, with over 6 million visitors annually.
+
+The Statue of Liberty, on the other hand, is an iconic symbol of freedom and democracy, located in New York Harbor. It was designed by Frédéric Auguste Bartholdi and built by Gustave Eiffel's company from 1875 to 1884. The statue was dedicated on October 28, 1886, and it has since become a powerful symbol of American values.
+
+While both structures are impressive in their own right, the Eiffel Tower is more focused on tourism
+
+[15/16] [FAILURE] Who is the president of Mars
+  Classification: person (keyword score: person=1 > place=0)
+  Top sources: ['Cristiano Ronaldo', 'Nikola Tesla', 'Isaac Newton']
+  Latency: total 46.2s (retrieve 45ms, generate 46162ms)
+  Answer: I don't know based on the provided context.
+
+[16/16] [FAILURE] Tell me about a random unknown person John Doe
+  Classification: person (keyword score: person=1 > place=0)
+  Top sources: ['Ada Lovelace', 'Charles Darwin', 'Nikola Tesla']
+  Latency: total 66.2s (retrieve 44ms, generate 66109ms)
+  Answer: John Doe was a Scottish naturalist who lived from around 1800 to 1850. He is best known for his work on the classification and description of plants, particularly in the field of botany. During this time, he traveled extensively throughout Europe, collecting specimens and making detailed notes about their characteristics.
+
+Doe's most significant contribution was his development of a system of plant classification that is still used today. He recognized that many different species were closely related and grouped them together based on their shared characteristics. This work laid the foundation for modern botany and had a lasting impact on the field.
+
+Despite his contributions, Doe's life remains somewhat mysterious. Little is known about his personal life, and there are few records of his family or relationships beyond what can be inferred from his published works.
+
+================================================================================
+Done. Tested 16 questions.

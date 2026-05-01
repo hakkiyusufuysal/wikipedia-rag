@@ -57,11 +57,18 @@ pip install -r requirements.txt
 ```bash
 # macOS
 brew install ollama
-ollama serve &           # starts the local LLM server on :11434
-ollama pull llama3.2:3b  # ~2 GB download, one-time
+ollama serve &              # starts the local LLM server on :11434
+ollama pull llama3.2:1b     # ~1.3 GB — DEFAULT (CPU-friendly, ~50s/answer)
+ollama pull llama3.2:3b     # optional, ~2 GB — better quality but ~3-4 min/answer on CPU
 ```
 
 For other platforms see [ollama.com/download](https://ollama.com/download).
+
+**Why 1B by default?** On a typical Intel Mac without a GPU, the 3B model
+takes 3-4 minutes per answer — too slow for interactive demo. The 1B model
+runs in ~50 seconds with comparable quality for short, grounded answers.
+To use 3B, set the env var: `DEFAULT_MODEL=llama3.2:3b python app.py` or
+pass `model: "llama3.2:3b"` in the chat API request.
 
 ### 3. Build the index
 
@@ -156,12 +163,41 @@ wikipedia-rag/
 
 ---
 
+## Test results (16/16 example questions)
+
+Run `python test_questions.py` to reproduce. Full output is in `test_results.txt`.
+
+| Category | Question | Verdict |
+|---|---|---|
+| people | Who was Albert Einstein... | ✅ correct (relativity, E=mc², Nobel 1921) |
+| people | What did Marie Curie discover | ✅ correct (radioactivity, polonium, radium) |
+| people | Why is Nikola Tesla famous | ✅ correct (AC electricity supply system) |
+| people | Compare Messi and Ronaldo | ✅ good comparison (Ballons d'Or, styles) |
+| people | What is Frida Kahlo known for | ✅ correct (self-portraits, suffering) |
+| places | Where is the Eiffel Tower | ✅ correct (Champ de Mars, Paris) |
+| places | Why is the Great Wall important | ✅ correct (13,170 mi, fortifications) |
+| places | What is Machu Picchu | ✅ correct (15th-c Inca citadel, Peru) |
+| places | What was the Colosseum used for | ✅ correct (gladiators, naval battles) |
+| places | Where is Mount Everest | ✅ correct (China–Nepal border) |
+| mixed | Famous place in Turkey | ✅ correct (Hagia Sophia) |
+| mixed | Person associated with electricity | ✅ correct (Nikola Tesla) |
+| mixed | Compare Einstein and Tesla | ✅ good comparison |
+| mixed | Compare Eiffel Tower and Statue of Liberty | ✅ correct (both built by Eiffel's company!) |
+| failure | Who is the president of Mars | ✅ "I don't know based on the provided context" |
+| failure | Random unknown John Doe | ⚠️ hallucinated a fake Scottish naturalist |
+
+**Known limitation:** the 1B model occasionally hallucinates on contextless
+queries when retrieved chunks are *somewhat* topically related but irrelevant.
+The 3B model handles this better — switch via `model: "llama3.2:3b"` when
+hardware permits.
+
 ## Limitations
 
 - **English only** — Wikipedia API + MiniLM both English-tuned
 - **Static corpus** — re-run `build_index.py` to refresh
 - **Single-process** — no horizontal scaling (out of scope for educational project)
 - **Rule-based classifier** — won't generalize to entities outside the 40-item list. See `recommendation.md` for production fix.
+- **Small-model hallucination** — see test result #16 above; default 1B trades a small accuracy hit for 4-6× faster CPU inference.
 
 ---
 
