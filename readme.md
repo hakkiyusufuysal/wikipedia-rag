@@ -2,6 +2,8 @@
 
 A local-only ChatGPT-style assistant that answers questions about famous people and places using **only** retrieved Wikipedia context. No external LLM API.
 
+**🎥 [5-minute demo video](https://github.com/hakkiyusufuysal/wikipedia-rag/releases/download/v1.0/demo.mov)** — full walkthrough of architecture, code, and live Q&A.
+
 **Stack:** Python 3.12 · Ollama (`llama3.2:3b`) · sentence-transformers (`all-MiniLM-L6-v2`) · ChromaDB · Flask + vanilla JS
 
 > Built for **Project 3** of BLG483E. Combines Project 1 (retrieval) and Project 2 (AI workflows) into a complete RAG application.
